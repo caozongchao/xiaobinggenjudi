@@ -1,0 +1,36 @@
+<view catchtap='showChange' wx:if="{{ !show }}" class="wrap" style="background: #000000;"></view>
+<view catchtap='showChange' class="content-wrap {{ !show ? 'run' : '' }}"
+    style='left: 50%; transform: translate(-50%, 0%); animation-duration: {{ time }}s'>
+    <view wx:for="{{ inputext }}" style="color: rgb({{ allR }}, {{ allG }}, {{ allB }}); font-size: {{ allSize }}px;"
+        class="content-item">{{
+        item }}</view>
+</view>
+
+<view wx:if="{{ show }}" class="control">
+    <input focus="{{true}}" value="{{ inputext }}" bindblur="inputfinish" placeholder="请输入弹幕内容" />
+    <view style="margin-top: 20rpx;">
+        <view class="slider-set">
+            <text class="cfff">设置文字大小:</text>
+            <slider data-type="size" bindchange="sliderchange" value="{{ allSize }}" min="100" max="300" show-value />
+        </view>
+        <view class="slider-set">
+            <text class="cfff">设置文字颜色R:</text>
+            <slider data-type="r" bindchange="sliderchange" value="{{ allR }}" min="0" max="255" show-value />
+        </view>
+        <view class="slider-set">
+            <text class="cfff">设置文字颜色G:</text>
+            <slider data-type="g" bindchange="sliderchange" value="{{ allG }}" min="0" max="255" show-value />
+        </view>
+        <view class="slider-set">
+            <text class="cfff">设置文字颜色B:</text>
+            <slider data-type="b" bindchange="sliderchange" value="{{ allB }}" min="0" max="255" show-value />
+        </view>
+        <view class="slider-set" style="margin-bottom: 30rpx;">
+            <text class="cfff">设置弹幕速度:</text>
+            <slider data-type="time" bindchange="sliderchange" value="{{ time }}" min="0.5" max="20" show-value />
+        </view>
+    </view>
+    <!-- <ad unit-id="adunit-e61a81bff1cc12a6"></ad> -->
+    <button type="default" size="default" catchtap='showChange'>确定</button>
+    <navigator class='back' open-type='reLaunch' url='/pages/index/index'>返回主页</navigator>
+</view>

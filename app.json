@@ -1,0 +1,25 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/watermark/index",
+        "pages/quan/index",
+        "pages/idcard/index",
+        "pages/joke/index",
+        "pages/danmu/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "小兵根据地",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "useExtendedLib": {
+        "weui": true
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "您的位置信息将用于小程序获取天气信息"
+        }
+    }
+}

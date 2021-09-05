@@ -1,0 +1,13 @@
+.page_row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+}
+
+.result {
+  margin-top: 20rpx;
+  padding: 15rpx 15rpx 15px 15rpx;
+  font-size: 30rpx;
+  color: #504e4e;
+  background-color: rgb(253, 245, 238);
+}

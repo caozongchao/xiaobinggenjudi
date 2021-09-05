@@ -1,0 +1,22 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title" style="text-align: center;">输入身份证号查询</view>
+    </view>
+    <view class="page__bd">
+        <view class='page_row'>
+            <vant-search label="搜索" bind:change="keyword" bind:search="search"
+                placeholder="15位或18位身份证号码" style="width: 99%;" shape="round" clearable />
+        </view>
+        <view class="result" wx:if="{{show}}">
+            <vant-cell-group inset>
+                <vant-cell title="地区" value="{{region}}" />
+                <vant-cell title="生日" value="{{birthday}}" />
+                <vant-cell title="性别" value="{{gender}}" />
+                <vant-cell title="年龄" value="{{age}}" />
+                <vant-cell title="是否成年" value="{{adult}}" />
+                <vant-cell title="生肖" value="{{zodiac}}" />
+                <vant-cell title="星座" value="{{constellation}}" />
+            </vant-cell-group>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,82 @@
+<view class="container">
+    <!-- 公告 -->
+    <view>
+        <vant-notice-bar left-icon="volume-o" scrollable="true" text="收藏小程序，在微信下拉任务栏就能快速找到，使用更方便。" />
+        <vant-notice-bar mode="closeable" color="#1989fa" background="#ecf9ff" left-icon="info-o"
+            text="有失效功能或任何使用问题，请联系客服。" />
+    </view>
+    <view class="weather">
+        <!-- 天气 -->
+        <view class="item" data-sort="6">
+            <view class="top">
+                <view class="left">
+                    <view class="content">
+                        <image class="icon" src="/statics/tianqi.png" mode="widthFix"></image>
+                        <view class="name">实时天气</view>
+                    </view>
+                    <!-- <view class="text" style="width: 200rpx;">雨天运费高</view> -->
+                </view>
+                <!-- <view class="right" bindtap="onLocalBtnClick">点击刷新</view> -->
+            </view>
+            <view class="bottom" style="display: flex; flex-direction: column;">
+                <view style="display: flex; flex-direction: row;">
+                    <view style="color:#990066">温馨提示：{{summary}}</view>
+                </view>
+                <view style="display: flex; flex-direction: row;">
+                    <view style="width: 320rpx;">观测时间：{{weather.obsTime}}</view>
+                    <view style="width: 290rpx; color:#004799">当前位置：{{city}}</view>
+                </view>
+                <view style="display: flex; flex-direction: row;">
+                    <view style="width: 320rpx;">天气：{{weather.text}}</view>
+                    <view style="width: 290rpx;">风向：{{weather.windDir}}，{{weather.windScale}}级</view>
+                </view>
+                <view style="display: flex; flex-direction: row;">
+                    <view style="width: 320rpx;">温度：{{weather.temp}}℃</view>
+                    <view style="width: 290rpx;">体感温度：{{weather.feelsLike}} ℃</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 功能 -->
+    <view class="main-core">
+        <view class="main-core-item" data-sort="1" bindtap="takeout">
+            <image class="core-item-icon" src="/statics/meituan.png"></image>
+            <text class="core-item-name">美团外卖红包</text>
+        </view>
+        <view class="main-core-item" data-sort="2" bindtap="takeout">
+            <image class="core-item-icon" src="/statics/eleme.png"></image>
+            <text class="core-item-name">饿了么外卖红包</text>
+        </view>
+        <view class="main-core-item" bindtap="toQuan">
+            <image class="core-item-icon" src="/statics/quan.png"></image>
+            <text class="core-item-name">购物优惠券</text>
+        </view>
+    </view>
+    <view class="main-core">
+        <view class="main-core-item" bindtap="toJoke">
+            <image class="core-item-icon" src="/statics/joke.png"></image>
+            <text class="core-item-name">笑话大全</text>
+        </view>
+        <view class="main-core-item" bindtap="toWatermark">
+            <image class="core-item-icon" src="/statics/video.png"></image>
+            <text class="core-item-name">短视频去水印</text>
+        </view>
+        <view class="main-core-item" bindtap="toIdcard">
+            <image class="core-item-icon" src="/statics/idcard.png"></image>
+            <text class="core-item-name">身份证查询</text>
+        </view>
+        <view class="main-core-item" bindtap="toDanmu">
+            <image class="core-item-icon" src="/statics/danmu.png"></image>
+            <text class="core-item-name">手持弹幕</text>
+        </view>
+    </view>
+    <!-- 分享 -->
+    <view class="round-area">
+        <button class="round-button" open-type='share'>分享</button>
+        <button class="round-button" open-type="contact">客服</button>
+    </view>
+    <!-- 公众号 -->
+    <view class="offical-account">
+        <official-account></official-account>
+    </view>
+</view>

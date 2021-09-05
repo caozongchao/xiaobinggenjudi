@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "vant-search": "/statics/vant/search/index",
+        "vant-collapse": "/statics/vant/collapse/index",
+        "vant-collapse-item": "/statics/vant/collapse-item/index",
+        "vant-cell": "/statics/vant/cell/index",
+        "vant-cell-group": "/statics/vant/cell-group/index"
+    }
+}

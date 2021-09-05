@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "vant-notice-bar": "/statics/vant/notice-bar/index"
+    },
+    "enablePullDownRefresh": true
+}

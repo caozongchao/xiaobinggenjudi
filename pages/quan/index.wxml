@@ -1,0 +1,26 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title" style="text-align: center;">搜索购物优惠券</view>
+    </view>
+    <view class="page__bd">
+        <view class='page_row'>
+            <vant-search label="搜索" bind:change="keyword" bind:search="search"
+                placeholder="请按以下支持的格式输入查找" style="width: 99%;" shape="round" clearable />
+        </view>
+        <view style="margin-top: 10rpx;">
+            <vant-collapse value="{{activeNames}}" bind:change="onChange" border="true">
+                <vant-collapse-item title="点击查看输入内容所支持的格式：" name="1">
+                    <view>1、各个电商平台的商品链接或商品分享文案：涛宝、京东、拼多多、唯品会</view>
+                    <view>2、苏宁易购正在接入中</view>
+                </vant-collapse-item>
+            </vant-collapse>
+        </view>
+        <view class="result" wx:if="{{show}}">
+            <vant-cell-group inset>
+                <vant-cell icon="after-sale" title="领券地址" title-width="140rpx" data-url='{{url}}' value="{{url}}" bind:click="textPaste" label="点击可复制" clickable />
+                <vant-cell wx:if="{{tokenShow}}" icon="info-o" title="口令" title-width="140rpx" data-url='{{token}}' value="{{token}}" bind:click="textPaste" label="点击可复制" clickable />
+                <vant-cell icon="info-o" title="使用方法" title-width="140rpx" data-url='{{usage}}' value="{{usage}}" bind:click="textPaste" label="点击可复制" clickable />
+            </vant-cell-group>
+        </view>
+    </view>
+</view>
