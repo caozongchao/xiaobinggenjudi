@@ -30,11 +30,11 @@ page {
 
 @keyframes move {
     from {
-        transform: translate(-10%, 0%);
+        transform: translate(-20%, 0%);
     }
 
     to {
-        transform: translate(-10%, -160%);
+        transform: translate(-20%, -170%);
     }
 }
 

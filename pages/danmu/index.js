@@ -57,8 +57,7 @@ Page({
         });
     },
 
-    onLoad: function onLoad() {
-    },
+    onLoad: function onLoad() {},
 
     onShareAppMessage: function onShareAppMessage() {
         return {
