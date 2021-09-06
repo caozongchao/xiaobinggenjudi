@@ -2,7 +2,7 @@
     <!-- 公告 -->
     <view style="margin-top: 10rpx;">
         <vant-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o"
-            text="下拉可刷新" />
+            text="页尾上拉翻页，下拉刷新" />
     </view>
     <view class="joke">
         <block wx:for="{{jokes}}" wx:key="key">

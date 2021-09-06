@@ -7,9 +7,9 @@ Page({
     },
     // 事件处理函数
     onLoad() {
-        this.getJoke();
+        this.newJoke();
     },
-    getJoke: function (event) {
+    newJoke: function (event) {
         wx.showToast({
             title: '努力加载中',
             icon: 'loading',
@@ -37,7 +37,39 @@ Page({
         })
     },
     onPullDownRefresh: function () {
-        this.getJoke();
+        this.newJoke();
         wx.stopPullDownRefresh();
-    }
+    },
+    onReachBottom: function () {
+        this.continueJoke();
+    },
+    continueJoke: function (event) {
+        wx.showToast({
+            title: '努力加载中',
+            icon: 'loading',
+            duration: 2000000
+        });
+        var that = this
+        wx.request({
+            url: 'https://www.mxnzp.com/api/jokes/list/random?app_id=hm9m8hlruiphfmmm&app_secret=bTdpTDNxUlBxVFZCdTZ5aGY3UTZWQT09',
+            method: 'get',
+            dataType: 'json',
+            success: function (res) {
+                var arr1 = that.data.jokes;
+                var arr2 = res.data.data;
+                arr1 = arr1.concat(arr2);
+                wx.hideToast();
+                that.setData({
+                    jokes: arr1
+                });
+            },
+            fail: function (e) {
+                wx.hideToast();
+                wx.showToast({
+                    title: '网络异常！',
+                    duration: 2000
+                });
+            },
+        })
+    },
 })
