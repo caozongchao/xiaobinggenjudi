@@ -1,7 +1,7 @@
 <view catchtap='showChange' wx:if="{{ !show }}" class="wrap" style="background: #000000;"></view>
 <view catchtap='showChange' class="content-wrap {{ !show ? 'run' : '' }}"
-    style='left: 50%; transform: translate(-50%, 0%); animation-duration: {{ time }}s'>
-    <view wx:for="{{ inputext }}" style="color: rgb({{ allR }}, {{ allG }}, {{ allB }}); font-size: {{ allSize }}px;"
+    style='animation-duration: {{ time }}s'>
+    <view wx:for="{{ inputext }}" style="color: rgb({{ allR }}, {{ allG }}, {{ allB }}); font-size: {{ allSize }}px; height: {{ allSize + 20 }}px;"
         class="content-item">{{
         item }}</view>
 </view>
