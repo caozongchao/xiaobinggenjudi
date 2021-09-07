@@ -106,8 +106,8 @@ page {
     height: 230rpx;
     width: 110rpx;
     position: fixed;
-    bottom: 140rpx;
-    right: 1rpx;
+    top: 280rpx;
+    right: 14rpx;
 }
 
 .round-area .round-button {
@@ -117,8 +117,7 @@ page {
     font-size: 28rpx;
     width: 100rpx;
     height: 100rpx;
-    background-color: #3A9CED;
-    color: #fff;
+    background-color: #f5f6f7;
     border-radius: 10%;
     font-weight: 400;
     margin-top: 10rpx;

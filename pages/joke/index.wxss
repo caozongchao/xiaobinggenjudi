@@ -1,5 +1,5 @@
 page {
-    background-color: #f8f8f8
+    background-color: #69696921
 }
 
 .container {
@@ -9,7 +9,7 @@ page {
 }
 
 .container .joke .item {
-    background-color: #69696921;
+    background-color: #fff;
     margin: 14rpx;
     border-radius: 10rpx;
     padding: 30rpx 30rpx 30rpx 30rpx
