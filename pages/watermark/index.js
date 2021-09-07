@@ -6,9 +6,8 @@ Page({
         activeNames: ['1'],
         keyword: '',
         show: true,
-        avatar: "",
         video: "",
-        music: "",
+        value: "",
     },
     onLoad: function (options) {},
     onChange(event) {
@@ -47,8 +46,9 @@ Page({
                 if (res.data.code == 200) {
                     that.setData({
                         show: true,
-                        avatar: res.data.data.avatar,
                         video: res.data.data.url,
+                        value: "点击下载",
+                        // avatar: res.data.data.avatar,
                         // music: res.data.data.music.url,
                     });
                 } else {
@@ -68,20 +68,84 @@ Page({
             },
         });
     },
-    textPaste(e) {
-        var tempData = e.target.dataset.url
-        wx.showToast({
-            title: '复制成功',
-        })
-        wx.setClipboardData({
-            data: tempData,
-            success: function (res) {
-                wx.getClipboardData({ //这个api是把拿到的数据放到电脑系统中的
-                    success: function (res) {
-                        console.log(res.data) // data
+    handleDownload(e) {
+        setTimeout(function () {
+            wx.showToast({
+                title: '下载中',
+                icon: 'loading',
+                duration: 9999999,
+                mask: true
+            })
+        }, 0) //延迟时间
+        let link = e.currentTarget.dataset.url;
+        let finalUrl = 'https://wm.5191.site/d.php?url='+encodeURIComponent(link);
+        console.log(finalUrl);
+        let fileName = new Date().valueOf();
+        // 此处监听进度条 downloadTask 
+        const downloadTask = wx.downloadFile({
+            url: finalUrl,
+            filePath: wx.env.USER_DATA_PATH + '/' + fileName + '.mp4',
+            success: res => {
+                console.log(res);
+                let filePath = res.filePath;
+                wx.saveVideoToPhotosAlbum({
+                    filePath,
+                    success: file => {
+                        setTimeout(function () {
+                            wx.showToast({
+                                title: '保存成功',
+                                icon: 'success',
+                                duration: 1500,
+                                mask: true
+                            })
+                        }, 0) //延迟时间
+                        let fileMgr = wx.getFileSystemManager();
+                        fileMgr.unlink({
+                            filePath: wx.env.USER_DATA_PATH + '/' + fileName + '.mp4',
+                            success: function (r) {
+
+                            },
+                        })
+                    },
+                    fail: err => {
+                        wx.hideLoading()
+                        console.log(err)
+                        if (err.errMsg === 'saveVideoToPhotosAlbum:fail auth deny') {
+                            setTimeout(function () {
+                                wx.showModal({
+                                    title: '提示',
+                                    content: '需要您授权保存相册',
+                                    showCancel: false,
+                                    success: data => {
+                                        wx.openSetting({
+                                            success(settingdata) {
+                                                if (settingdata.authSetting['scope.writePhotosAlbum']) {
+                                                    setTimeout(function () {
+                                                        wx.showModal({
+                                                            title: '提示',
+                                                            content: '获取权限成功,再次点击下载即可保存',
+                                                            showCancel: false,
+                                                        })
+                                                        wx.hideLoading()
+                                                    }, 0)
+                                                } else {
+                                                    setTimeout(function () {
+                                                        wx.showModal({
+                                                            title: '提示',
+                                                            content: '获取权限失败，将无法保存到相册哦~',
+                                                            showCancel: false,
+                                                        })
+                                                    }, 0)
+                                                }
+                                            },
+                                        })
+                                    }
+                                })
+                            }, 0)
+                        }
                     }
                 })
             }
         })
-    },
+    }
 });

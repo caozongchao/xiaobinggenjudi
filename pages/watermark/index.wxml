@@ -11,7 +11,7 @@
             <vant-collapse value="{{activeNames}}" bind:change="onChange" border="true">
                 <vant-collapse-item title="点击查看输入内容所支持的格式：" name="1">
                     <view>
-                        1、目前支持 抖音、皮皮虾、火山、微视、微博、绿洲、最右、轻视频、快手、全民小视频、皮皮搞笑、巴塞电影、陌陌、Before避风、开眼、Vue Vlog、小咖秀、全民K歌
+                        <rich-text nodes="1、目前支持 <font style='color:#f00'>抖音、皮皮虾、火山、微视、微博、绿洲、最右、轻视频、快手、全民小视频、巴塞电影、陌陌、Before避风、开眼、Vue Vlog、小咖秀、皮皮搞笑、全民K歌、西瓜视频、逗拍、虎牙、6间房、梨视频、新片场、acfun、美拍 等26个平台</font>"></rich-text>
                     </view>
                     <view>
                         2、温馨提示：粘贴视频地址时无需删除文案，但如果视频链接正确但解析失败，请删掉文案后重试
@@ -21,8 +21,8 @@
         </view>
         <view class="result" wx:if="{{show}}">
             <vant-cell-group inset>
-                <vant-cell icon="photo-o" title="封面地址" title-width="140rpx" data-url='{{avatar}}' value="{{avatar}}" bind:click="textPaste" label="点击可复制" clickable />
-                <vant-cell icon="video-o" title="视频地址" title-width="140rpx" data-url='{{video}}' value="{{video}}" bind:click="textPaste" label="点击可复制" clickable />
+                <!-- <vant-cell icon="photo-o" title="封面" data-type="image" data-url='{{avatar}}' bind:click="handleDownload" clickable /> -->
+                <vant-cell icon="video-o" title="视频" value="{{value}}" data-type="video" data-url='{{video}}' bind:click="handleDownload" clickable />
             </vant-cell-group>
         </view>
     </view>
