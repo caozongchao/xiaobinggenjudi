@@ -1,5 +1,5 @@
 page {
-    background-color: #f8f8f8
+    background-color: #69696921
 }
 
 .container {
@@ -10,7 +10,7 @@ page {
 
 /* 天气start */
 .container .weather .item {
-    background-color: #69696921;
+    background-color: #fff;
     margin: 14rpx;
     border-radius: 10rpx;
     padding: 0 30rpx 30rpx 30rpx
@@ -106,7 +106,7 @@ page {
     height: 230rpx;
     width: 110rpx;
     position: fixed;
-    top: 350rpx;
+    bottom: 140rpx;
     right: 1rpx;
 }
 
@@ -117,7 +117,8 @@ page {
     font-size: 28rpx;
     width: 100rpx;
     height: 100rpx;
-    background-color: #69696921;
+    background-color: #3A9CED;
+    color: #fff;
     border-radius: 10%;
     font-weight: 400;
     margin-top: 10rpx;
@@ -130,7 +131,7 @@ page {
     display: flex;
     flex-flow: row wrap;
     align-content: center;
-    background-color: #69696921;
+    background-color: #fff;
     border-radius: 10rpx;
     min-height: 230rpx;
     overflow: hidden;

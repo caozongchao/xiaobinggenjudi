@@ -8,7 +8,6 @@ page::after {
   animation: shadow-preload .1s;
   animation-delay: 3s
 }
-
 @-webkit-keyframes shadow-preload {
   0% {
     background-image: url(https://cdn.dcloud.net.cn/img/shadow-grey.png)

@@ -1,14 +1,14 @@
 <view catchtap='showChange' wx:if="{{ !show }}" class="wrap" style="background: #000000;"></view>
-<view catchtap='showChange' class="content-wrap {{ !show ? 'run' : '' }}"
-    style='animation-duration: {{ time }}s'>
-    <view wx:for="{{ inputext }}" style="color: rgb({{ allR }}, {{ allG }}, {{ allB }}); font-size: {{ allSize }}px; height: {{ allSize + 20 }}px;"
-        class="content-item">{{
-        item }}</view>
+<view catchtap='showChange' class="content-wrap {{ !show ? 'run' : '' }}" style='animation-duration: {{ time }}s'>
+    <view wx:key="key" wx:for="{{ content }}"
+        style="color: rgb({{ allR }}, {{ allG }}, {{ allB }}); font-size: {{ allSize }}px;"
+        class="content-item">{{ item }}</view>
 </view>
 
 <view wx:if="{{ show }}" class="control">
-    <input focus="{{true}}" value="{{ inputext }}" bindblur="inputfinish" placeholder="请输入弹幕内容" />
-    <view style="margin-top: 20rpx;">
+    <input focus="{{show}}" value="{{ inputext }}" bindinput="keyword" placeholder="请输入弹幕内容" />
+    <!-- <view class="title">中英文之间记得用空格隔开哦</view> -->
+    <view>
         <view class="slider-set">
             <text class="cfff">设置文字大小:</text>
             <slider data-type="size" bindchange="sliderchange" value="{{ allSize }}" min="100" max="300" show-value />
@@ -31,6 +31,6 @@
         </view>
     </view>
     <!-- <ad unit-id="adunit-e61a81bff1cc12a6"></ad> -->
-    <button type="default" size="default" catchtap='showChange'>确定</button>
+    <button type="default" size="default" catchtap='keywordDelay'>确定</button>
     <navigator class='back' open-type='reLaunch' url='/pages/index/index'>返回主页</navigator>
 </view>

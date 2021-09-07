@@ -72,4 +72,20 @@ Page({
             },
         })
     },
+    textPaste(e) {
+        var tempData = e.target.dataset.url
+        wx.showToast({
+            title: '复制成功',
+        })
+        wx.setClipboardData({
+            data: tempData,
+            success: function (res) {
+                wx.getClipboardData({ //这个api是把拿到的数据放到电脑系统中的
+                    success: function (res) {
+                        console.log(res.data) // data
+                    }
+                })
+            }
+        })
+    },
 })

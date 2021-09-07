@@ -65,10 +65,10 @@
             <image class="core-item-icon" src="/statics/idcard.png"></image>
             <text class="core-item-name">身份证查询</text>
         </view>
-        <view class="main-core-item" bindtap="toDanmu">
+        <!-- <view class="main-core-item" bindtap="toDanmu">
             <image class="core-item-icon" src="/statics/danmu.png"></image>
             <text class="core-item-name">手持弹幕</text>
-        </view>
+        </view> -->
     </view>
     <!-- 分享 -->
     <view class="round-area">

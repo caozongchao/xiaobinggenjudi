@@ -1,16 +1,16 @@
 <view class="container">
     <!-- 公告 -->
     <view style="margin-top: 10rpx;">
-        <vant-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o"
-            text="页首下拉刷新，页尾上拉翻页" />
+        <vant-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o" text="页首下拉刷新，页尾上拉翻页" />
     </view>
     <view class="joke">
         <block wx:for="{{jokes}}" wx:key="key">
-            <view class="item">
+            <view class="item" style="margin-top: 30rpx;">
                 <view class="bottom">
                     <rich-text nodes="{{item.content}}"></rich-text>
                     <!-- <text>\n收录时间：{{item.updateTime}}</text> -->
                 </view>
+                <text data-url='{{item.content}}' bindtap="textPaste" style="color: brown;">点击复制</text>
             </view>
         </block>
     </view>

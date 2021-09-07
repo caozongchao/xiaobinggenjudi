@@ -30,11 +30,11 @@ page {
 
 @keyframes move {
     from {
-        transform: translate(-20%, 0%);
+        transform: translate(-50%, 0%);
     }
 
     to {
-        transform: translate(-20%, -170%);
+        transform: translate(-50%, -170%);
     }
 }
 
@@ -54,9 +54,9 @@ page {
 
 .control .title {
     font-size: 24rpx;
-    color: #fff;
+    color: #777;
     text-align: center;
-    margin: 10rpx 0;
+    margin-top: 30rpx;
 }
 
 .control .sc-wrap {
