@@ -40,7 +40,7 @@
     <!-- 功能 -->
     <view class="main-core">
         <view class="main-core-item" data-sort="1" bindtap="takeout">
-            <image class="core-item-icon" src="/statics/meituan.png"></image>
+            <image class="core-item-icon" src="/statics/meituanwaimai.png"></image>
             <text class="core-item-name">美团外卖红包</text>
         </view>
         <view class="main-core-item" data-sort="2" bindtap="takeout">
@@ -65,10 +65,10 @@
             <image class="core-item-icon" src="/statics/idcard.png"></image>
             <text class="core-item-name">身份证查询</text>
         </view>
-        <!-- <view class="main-core-item" bindtap="toDanmu">
-            <image class="core-item-icon" src="/statics/danmu.png"></image>
-            <text class="core-item-name">手持弹幕</text>
-        </view> -->
+        <view class="main-core-item" data-sort="4" bindtap="takeout">
+            <image class="core-item-icon" src="/statics/shangou.png"></image>
+            <text class="core-item-name">美团闪购红包</text>
+        </view>
     </view>
     <!-- 分享 -->
     <view class="round-area">

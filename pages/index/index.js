@@ -51,6 +51,9 @@ Page({
         } else if (event.currentTarget.dataset.sort == 2) {
             type = 'eleme'
             appId = 'wxece3a9a4c82f58c9'
+        } else if (event.currentTarget.dataset.sort == 4) {
+            type = 'meituanshangou'
+            appId = 'wxde8ac0a21135c07d'
         }
         var that = this
         wx.request({
