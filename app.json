@@ -5,7 +5,7 @@
         "pages/quan/index",
         "pages/idcard/index",
         "pages/joke/index",
-        "pages/danmu/index"
+        "pages/dujitang/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

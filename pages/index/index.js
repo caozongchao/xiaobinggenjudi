@@ -32,9 +32,9 @@ Page({
             url: '/pages/joke/index',
         })
     },
-    toDanmu: function (event) {
+    toDujitang: function (event) {
         wx.navigateTo({
-            url: '/pages/danmu/index',
+            url: '/pages/dujitang/index',
         })
     },
     takeout: function (event) {

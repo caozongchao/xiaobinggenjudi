@@ -51,23 +51,25 @@
             <image class="core-item-icon" src="/statics/quan.png"></image>
             <text class="core-item-name">购物优惠券</text>
         </view>
-    </view>
-    <view class="main-core">
+        <view class="main-core-item" data-sort="4" bindtap="takeout">
+            <image class="core-item-icon" src="/statics/shangou.png"></image>
+            <text class="core-item-name">美团闪购红包</text>
+        </view>
         <view class="main-core-item" bindtap="toJoke">
             <image class="core-item-icon" src="/statics/joke.png"></image>
             <text class="core-item-name">笑话大全</text>
-        </view>
-        <view class="main-core-item" bindtap="toWatermark">
-            <image class="core-item-icon" src="/statics/video.png"></image>
-            <text class="core-item-name">短视频去水印</text>
         </view>
         <view class="main-core-item" bindtap="toIdcard">
             <image class="core-item-icon" src="/statics/idcard.png"></image>
             <text class="core-item-name">身份证查询</text>
         </view>
-        <view class="main-core-item" data-sort="4" bindtap="takeout">
-            <image class="core-item-icon" src="/statics/shangou.png"></image>
-            <text class="core-item-name">美团闪购红包</text>
+        <view class="main-core-item" bindtap="toWatermark">
+            <image class="core-item-icon" src="/statics/video.png"></image>
+            <text class="core-item-name">短视频去水印</text>
+        </view>
+        <view class="main-core-item" bindtap="toDujitang">
+            <image class="core-item-icon" src="/statics/dujitang.png"></image>
+            <text class="core-item-name">毒鸡汤</text>
         </view>
     </view>
     <!-- 分享 -->
