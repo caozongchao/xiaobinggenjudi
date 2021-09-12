@@ -69,6 +69,10 @@ Page({
         });
     },
     handleDownload(e) {
+        let link = e.currentTarget.dataset.url;
+        if(!link){
+            return false;
+        }
         setTimeout(function () {
             wx.showToast({
                 title: '下载中',
@@ -76,8 +80,7 @@ Page({
                 duration: 9999999,
                 mask: true
             })
-        }, 0) //延迟时间
-        let link = e.currentTarget.dataset.url;
+        }, 0);
         let finalUrl = 'https://wm.5191.site/d.php?url='+encodeURIComponent(link);
         console.log(finalUrl);
         let fileName = new Date().valueOf();
@@ -146,6 +149,17 @@ Page({
                     }
                 })
             }
-        })
+        });
+        downloadTask.onProgressUpdate((res) => {
+            setTimeout(function () {
+                wx.showToast({
+                    title: res.progress.toString()+'%',
+                    icon: 'loading',
+                    duration: 9999999,
+                    mask: true
+                })
+            }, 0);
+            // console.log('下载进度', res.progress);
+        });
     }
 });
