@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "vant-notice-bar": "/statics/vant/notice-bar/index",
+        "vant-skeleton": "/statics/vant/skeleton/index",
+        "van-cell": "/statics/vant/cell/index",
+        "van-cell-group": "/statics/vant/cell-group/index",
+        "vant-search": "/statics/vant/search/index"
+    }
+}

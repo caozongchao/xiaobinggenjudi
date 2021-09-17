@@ -5,7 +5,8 @@
         "pages/quan/index",
         "pages/idcard/index",
         "pages/joke/index",
-        "pages/dujitang/index"
+        "pages/dujitang/index",
+        "pages/song/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -37,6 +37,11 @@ Page({
             url: '/pages/dujitang/index',
         })
     },
+    toSong: function (event) {
+        wx.navigateTo({
+            url: '/pages/song/index',
+        })
+    },
     takeout: function (event) {
         wx.showToast({
             title: '努力加载中',

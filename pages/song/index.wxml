@@ -1,0 +1,14 @@
+<view class="container">
+    <view style="margin-top: 10rpx;">
+        <vant-notice-bar left-icon="volume-o" scrollable="true" text="小程序本身不储存任何资源文件，资源来自互联网，仅供学习交流试听，请于下载后24小时内删除，支持购买正版专辑！" />
+    </view>
+    <view class="page__hd" style="margin-top: 10rpx;">
+        <view class="page__title" style="text-align: center;">音乐搜索</view>
+    </view>
+    <view class="page__bd">
+        <view class='page_row'>
+            <vant-search label="搜索" bind:change="keyword" bind:search="search"
+                placeholder="音乐名称" style="width: 99%;" shape="round" clearable />
+        </view>
+    </view>
+</view>

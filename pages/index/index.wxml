@@ -67,6 +67,10 @@
             <image class="core-item-icon" src="/statics/video.png"></image>
             <text class="core-item-name">短视频去水印</text>
         </view>
+        <!-- <view class="main-core-item" bindtap="toSong">
+            <image class="core-item-icon" src="/statics/song.png"></image>
+            <text class="core-item-name">音乐搜索</text>
+        </view> -->
         <view class="main-core-item" bindtap="toDujitang">
             <image class="core-item-icon" src="/statics/dujitang.png"></image>
             <text class="core-item-name">毒鸡汤</text>
